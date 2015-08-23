@@ -1,0 +1,15 @@
+{% extends 'barterfriends/base.html' %}
+
+{% block content %}
+    <div class="jumbotron">
+    <h2 class="heading">{% block heading %}Form{% endblock %}</h2>
+    {% block form %}
+        <form method="post" action="{% block action %}/{% endblock %}">
+        {% csrf_token %}
+        {% block form_fields %}
+            {{ form.as_ul }}
+        {% endblock %}
+        </form>
+    {% endblock %}
+    </div>
+{% endblock %}
