@@ -1,6 +1,6 @@
 import os
 
-PROJECT_PATH = '/Users/ananta/Sites/barter.localhost.com'
+PROJECT_PATH = '/home/%s/sites/%s' % (env.user, env.host)
 try:
     SECRET_KEY
 except NameError:

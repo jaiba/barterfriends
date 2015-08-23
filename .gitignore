@@ -3,3 +3,4 @@ profiles_settings.xml
 .idea
 _site
 settings_local.py
+*.pyc
