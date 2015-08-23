@@ -119,5 +119,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.abspath(os.path.join(BASE_DIR, '../static'))
+STATICFILES_DIRS = (
+    "/home/ananta/sites/barterfriends.org/source/barterfriends/static",
+)
 
 from config.settings_local import *
