@@ -39,7 +39,7 @@ def _update_settings(source_folder, site_name):
     if not exists(local_settings):
         run('touch %s' % (local_settings,))
     sed(settings_path, 'DEBUG = True', 'DEBUG = False')
-    sed(settings_path, 'ALLOWED_HOSTS =.+$', 'ALLOWED_HOSTS = ["%s"]' % (site_name,))
+    sed(settings_path, 'ALLOWED_HOSTS =.+$', 'ALLOWED_HOSTS = ["%s", "www.%s"]' % (site_name,site_name,))
 
 def _update_virtualenv(source_folder):
     virtualenv_folder = source_folder + '/../virtualenv'

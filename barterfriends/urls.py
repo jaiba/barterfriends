@@ -9,5 +9,5 @@ urlpatterns = [
     url(r'^collaborate/', include('collaborate.urls', namespace='collaborate')),
     url(r'^do/', include('do.urls', namespace='do')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^', include('django.contrib.auth.urls')),
+    url(r'^accounts/', include('allauth.urls')),
 ]

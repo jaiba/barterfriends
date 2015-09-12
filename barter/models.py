@@ -40,4 +40,5 @@ class ItemForBarter(models.Model):
     height = models.FloatField()
     height_units = models.CharField(max_length=3, choices=Length_Unit_Choices)
     weight = models.FloatField()
+    weight_units = models.CharField(max_length=3, choices=Weight_Unit_Choices)
     user_id = models.ForeignKey(User)
