@@ -1,5 +1,5 @@
 from fabric.contrib.files import append, exists, sed
-from fabric.api import env, local, run
+from fabric.api import env, local, run, sudo
 import random
 
 REPO_URL = 'https://github.com/jaiba/barterfriends.git'
@@ -46,6 +46,7 @@ def _update_virtualenv(source_folder):
     if not exists(virtualenv_folder + '/bin/pip'):
         run('virtualenv --python=python3 %s' % (virtualenv_folder,))
     run('%s/bin/pip install -r %s/requirements.txt' % (virtualenv_folder, source_folder))
+    sudo('service gunicorn-barterfriends.org reload')
 
 
 def _update_static_files(source_folder):
