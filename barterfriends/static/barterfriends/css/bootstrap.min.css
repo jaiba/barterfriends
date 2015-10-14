@@ -3638,6 +3638,12 @@ select[multiple].form-group-lg .form-control, textarea.form-group-lg .form-contr
     margin-top: 5px
 }
 
+a.btn.btn-xs {
+    padding: 8px;
+    margin-top: 6px;
+    margin-right: 2px;
+}
+
 input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].btn-block {
     width: 100%
 }

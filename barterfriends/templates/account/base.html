@@ -1,1 +1,33 @@
 {% extends 'barterfriends/base.html' %}
+
+{% block content %}
+    <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2>{% block formname %}{% endblock %}</h2>
+            </div>
+            <div class="panel-body">
+                {% block formcontents %}
+                    <form class="login" method="POST" action="{% block formaction %}{% endblock %}">
+                    {% csrf_token %}
+                    {% for field in form.visible_fields %}
+                        <div class="row">
+                            <div class="col-md-6" align="right">{{ field.label_tag }}</div>
+                            <div class="col-md-6">{{ field }}</div>
+                            <div class="col-md-12">{{ field.errors }}</div>
+                        </div>
+                    {% endfor %}
+                    {% for hidden in form.hidden_fields %}
+                    {{ hidden }}
+                    {% endfor %}
+                    {% if redirect_field_value %}
+                        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                    {% endif %}
+                    {% block formsubmit %}{% endblock %}
+                    </form>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

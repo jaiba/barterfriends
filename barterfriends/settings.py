@@ -47,6 +47,8 @@ INSTALLED_APPS = (
     'allauth',
     'allauth.account',
     'watson',
+    'djangular',
+    'rest_framework',
 )
 
 SITE_ID = 1
