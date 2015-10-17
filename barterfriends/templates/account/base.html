@@ -8,7 +8,7 @@
             </div>
             <div class="panel-body">
                 {% block formcontents %}
-                    <form class="login" method="POST" action="{% block formaction %}{% endblock %}">
+                    <form class="{% block formclass %}{% endblock %}" method="POST" action="{% block formaction %}{% endblock %}">
                     {% csrf_token %}
                     {% for field in form.visible_fields %}
                         <div class="row">
@@ -23,8 +23,18 @@
                     {% if redirect_field_value %}
                         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                     {% endif %}
-                    {% block formsubmit %}{% endblock %}
+                        <div class="row">
+                            <div class="col-md-12" align="center">
+                                {% block submitbutton %}{% endblock %}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" align="center">
+                                {% block submitalt %}{% endblock %}
+                            </div>
+                        </div>
                     </form>
+                    {% block secondaryform %}{% endblock %}
                 {% endblock %}
             </div>
         </div>

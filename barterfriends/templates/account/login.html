@@ -3,16 +3,13 @@
 {% load i18n %}
 
 {% block formname %}Sign In{% endblock %}
+
+{% block formclass %}login{% endblock %}
+
 {% block formaction %}{% url 'account_login' %}{% endblock %}
-{% block formsubmit %}
-    <div class="row">
-        <div class="col-md-12" align="center">
-        <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12" align="center">
-            <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-        </div>
-    </div>
+
+{% block submitbutton %}<button class="primaryAction" type="submit">{% trans "Sign In" %}</button>{% endblock %}
+
+{% block submitalt %}
+    <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
 {% endblock %}

@@ -60,12 +60,18 @@
                 <li>
                     <a href="{% url 'do:index' %}">Do</a>
                 </li>
+                {% if request.user.is_authenticated %}
+                <li>
+                    <a href="{% url 'account_logout' %}" class="btn btn-default btn-xs">Logout</a>
+                </li>
+                {% else %}
                 <li>
                     <a href="{% url 'account_login' %}" class="btn btn-default btn-xs">Login</a>
                 </li>
                 <li>
                     <a href="{% url 'account_signup' %}" class="btn btn-default btn-xs">Register</a>
                 </li>
+                {% endif %}
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -132,32 +138,32 @@
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="https://placehold.it/700x450" alt="">
+                    <img class="img-responsive img-portfolio img-hover" src="/static/barterfriends/images/placeholder.png" alt="">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="https://placehold.it/700x450" alt="">
+                    <img class="img-responsive img-portfolio img-hover" src="/static/barterfriends/images/placeholder.png" alt="">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="https://placehold.it/700x450" alt="">
+                    <img class="img-responsive img-portfolio img-hover" src="/static/barterfriends/images/placeholder.png" alt="">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="https://placehold.it/700x450" alt="">
+                    <img class="img-responsive img-portfolio img-hover" src="/static/barterfriends/images/placeholder.png" alt="">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="https://placehold.it/700x450" alt="">
+                    <img class="img-responsive img-portfolio img-hover" src="/static/barterfriends/images/placeholder.png" alt="">
                 </a>
             </div>
             <div class="col-md-4 col-sm-6">
                 <a href="portfolio-item.html">
-                    <img class="img-responsive img-portfolio img-hover" src="https://placehold.it/700x450" alt="">
+                    <img class="img-responsive img-portfolio img-hover" src="/static/barterfriends/images/placeholder.png" alt="">
                 </a>
             </div>
         </div>
@@ -184,7 +190,7 @@
                     dolorum ducimus unde.</p>
             </div>
             <div class="col-md-6">
-                <img class="img-responsive" src="https://placehold.it/700x450" alt="">
+                <img class="img-responsive" src="/static/barterfriends/images/placeholder.png" alt="">
             </div>
         </div>
         <!-- /.row -->
